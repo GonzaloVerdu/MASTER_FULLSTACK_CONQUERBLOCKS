@@ -1,0 +1,200 @@
+@charset "UTF-8";
+
+// 1. Vendors
+@use 'vendors/normalize';
+
+//Abstracts
+@use './abstracts/index';
+
+// 2. Base stuff
+@use 'base/base';
+@use 'base/fonts';
+@use 'base/helpers';
+@use 'base/typography';
+
+// 3. Layout-related sections
+@use 'layout/footer';
+@use 'layout/header';
+
+// 4. Components
+@use 'components/button';
+
+// 5. Pages
+@use 'pages/home';
+
+// 6. Themes
+@use 'themes/default';
+
+body {
+    background-image: 
+        url(../img/woman.png),
+        url(../img/Rectangle\_1.png),
+        url(../img/Rectangle_2.png),
+        url(../img/background_flower.svg);        
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+    background-position: bottom right 30%, top left, top right, top 20% right 23%;
+    background-size: 70% 95%, 65% 80%, 35% 80%, 25% 40%;
+    background-blend-mode: normal, normal, difference, normal;
+
+    padding: 0px 50px;
+    margin: 0;
+}
+
+main {
+    margin: 0;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 10px 50px;
+    padding-right: 20px;
+    display: flex;
+    flex-wrap: nowrap;
+
+    .left {
+        margin: 0;
+        padding: 0;
+        width: 45%;
+        
+        h1 {
+            font-size: 64px;
+            font-weight: 700;
+            color: index.$brand-blue;
+        }
+
+        p {
+            font-size: 24px;
+            color: darkgrey;
+        }
+
+        div#book {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            margin-top: 50px;
+            
+
+            a#video {
+                display: inline-flex;
+                text-decoration: none;
+                align-items: center;
+                justify-content: center;
+                color: index.$brand-blue;
+                font-size: 18px;
+                margin: 0;
+                margin-left: 10px;
+                padding: 0;
+            }
+
+            img {
+                width: 50px;
+                height: 50px;
+                margin: 0;
+                margin-right: 20px;
+                padding: 10px;
+                padding-left: 13px;
+                border: none;
+                background-color: white;
+                border-style: solid;
+                border-color: white;
+                border-radius: 32px;
+                box-shadow: 0 5px 16px darkgrey;
+            }
+        }
+    }
+
+    #lower_left {
+        display: flex;
+        flex-wrap: nowrap;
+        width: 75%;
+        margin: 0;
+        margin-top: 70px;
+        padding: 25px;
+        justify-content: space-between;
+        background-color: white;
+        gap: 10px;
+
+        div.info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: calc(100% / 3);
+            
+
+            img {
+                height: 60px;
+                width: 60px;
+                margin: 10px;
+                padding: 0;
+            }
+
+            h3 {
+                font-size: 28px;
+                color: index.$brand-blue;
+                margin: 10px;
+                padding: 0;
+                font-weight: 400;
+            }
+
+            p {
+                font-size: 20px;
+                text-align: center;
+                margin: 0;
+                padding: 0;
+            }
+        }
+    }
+
+    .lower_right {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        justify-self: flex-end;
+        margin: 0;
+        margin-left: auto;
+        width: 35%;
+        padding: 0px;
+       
+
+        article.review {
+            width: 390px;
+            height: 220px;
+            border-radius: 16px;
+            padding: 24px;
+            margin-top: 50px;
+            margin-bottom: 10px;
+            margin-right: 110px;
+            background-color: rgba(255, 255, 255, 0.45);
+            backdrop-filter: blur(8px);
+            font-size: 16px;
+            
+            
+            h4 {
+                font-size: 18px;
+                margin: 0;
+                padding: 0;
+                margin-top: 13px;
+                color: index.$brand-blue;
+            }
+            
+            img {
+                height: 21px;
+                width: 32px;
+                margin: 0;
+                padding: 0;
+            }
+            
+            p {
+                margin: 0;
+                padding: 0;
+            }
+        }
+        
+        #first {
+            align-self: flex-end;
+        }
+    }
+
+
+}
+
+
