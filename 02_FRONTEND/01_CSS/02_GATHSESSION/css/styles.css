@@ -18,6 +18,8 @@ html {
  */
 body {
   margin: 0;
+  padding: 0;
+  border: 0;
 }
 
 /**
@@ -386,7 +388,7 @@ html {
  * Basic typography style for copy text
  */
 body {
-  color: rgb(34, 34, 34);
+  color: white;
   font: normal 125%/1.4 "Poppins", sans-serif;
 }
 
@@ -400,95 +402,51 @@ header {
   padding: 20px 50px;
   align-items: center;
 }
-header img {
-  width: 212px;
-  height: 54px;
-  margin: 0;
+header nav {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  font-size: 1rem;
+  margin-left: auto;
+  align-self: flex-end;
   margin-right: 10%;
   padding: 0;
 }
-header nav.navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: 0;
-  padding: 10px 0;
-  width: 29%;
-  height: fit-content;
-  gap: 30px;
-  color: #264065;
-}
-header nav.navbar a {
-  font-size: 18px;
-  color: #264065;
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-}
-header nav.navbar a:visited {
-  text-decoration: none;
-  color: #264065;
-}
-header nav.navbar a {
-  width: 24px;
-  height: 24px;
-}
-header nav.navbar a img {
-  width: 20px;
-  height: 18px;
-  margin: 5px;
-  padding: 0px;
-}
-header div {
-  display: flex;
-  align-items: center;
-  gap: 50px;
-  padding: 0;
-  margin: 0;
-  margin-left: auto;
-  margin-right: 225px;
-  justify-self: flex-end;
-}
-header div img {
-  width: 24px;
-  height: 24px;
-  color: #264065;
-}
-header div span#icons {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  width: fit-content;
-}
-header div span#log {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  width: fit-content;
-}
-header div span#log a#sing_in {
-  font-size: 18px;
-  padding: 15px 5px;
-  margin: 0 10px;
-  color: #264065;
-}
-header div span#log a#sing_up {
-  font-size: 18px;
-  padding: 0;
-  margin: 0;
+header a {
+  font-family: "Poppins", sans-serif;
   color: white;
+  opacity: 0.5;
+  margin: 0;
+  padding: 1.5rem;
   text-decoration: none;
+}
+header a#home {
+  color: white;
+  opacity: 1;
+  position: relative;
+  display: inline-block;
+  margin: 0;
+}
+header a#home::after {
+  content: "";
+  position: absolute;
+  left: 20px;
+  bottom: 0;
+  width: 30%;
+  height: 3px;
+  background: #DB2A6B;
+  border-radius: 6px;
 }
 
 .container button {
-  background-color: #264065;
+  background-color: #DB2A6B;
   height: 60px;
+  width: fit-content;
   margin: 0;
-  padding: 5px 40px;
+  padding: 0px 90px;
   border-style: none;
-  border-radius: 32px;
+  border-radius: 16px 16px 16px 0;
+  color: white;
 }
 .container button a {
   font-size: 18px;
@@ -498,148 +456,150 @@ header div span#log a#sing_up {
   text-decoration: none;
 }
 
-body {
-  background-image: url(../img/woman.png), url(../img/Rectangle_1.png), url(../img/Rectangle_2.png), url(../img/background_flower.svg);
-  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
-  background-position: bottom right 30%, top left, top right, top 20% right 23%;
-  background-size: 70% 95%, 65% 80%, 35% 80%, 25% 40%;
-  background-blend-mode: normal, normal, difference, normal;
-  padding: 0px 50px;
+a#home {
+  font-family: "Poppins", sans-serif;
+  color: #DB2A6B;
+  text-decoration: none;
+}
+
+.container {
+  width: 100%;
+  height: 100dhv;
   margin: 0;
+  padding: 0;
+  border: 0;
+  background-color: #2B2D38;
+  background-image: url(../img/ellipse-grnade.svg), url(../img/ellipse.svg);
+  background-repeat: no-repeat, no-repeat;
+  background-position: bottom -300px right -200px, bottom right;
 }
 
 main {
-  margin: 0;
-  margin-top: 50px;
-  margin-bottom: 50px;
-  padding: 10px 50px;
-  padding-right: 20px;
   display: flex;
+  flex-direction: row;
   flex-wrap: nowrap;
-}
-main .left {
   margin: 0;
-  padding: 0;
-  width: 45%;
+  padding: 20px 50px;
+  width: 100%;
+  height: 100%;
 }
-main .left h1 {
-  font-size: 64px;
-  font-weight: 700;
-  color: #264065;
+main section.content {
+  width: 50%;
+  height: 100%;
 }
-main .left p {
+main section#content1 {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  padding-top: 4rem;
+}
+main section#content1 h1 {
+  font-size: 80px;
+  font-family: "Merriweather", sans-serif;
+  color: white;
+  margin: 0.5rem 0;
+  padding-right: 10rem;
+}
+main section#content1 p {
   font-size: 24px;
-  color: darkgrey;
+  color: white;
+  opacity: 0.5;
+  margin: 0.5rem 0;
+  padding-right: 14rem;
 }
-main .left div#book {
+main section#content1 div.get_started {
+  margin: 0.5rem 0;
+  font-size: 18px;
   display: flex;
-  gap: 30px;
+  flex-direction: row;
+  width: 100%;
   align-items: center;
-  margin-top: 50px;
+  justify-content: flex-start;
+  margin: 2.5rem 0;
 }
-main .left div#book a#video {
-  display: inline-flex;
+main section#content1 div.get_started a {
+  color: white;
   text-decoration: none;
-  align-items: center;
-  justify-content: center;
-  color: #264065;
-  font-size: 18px;
   margin: 0;
-  margin-left: 10px;
   padding: 0;
-}
-main .left div#book img {
-  width: 50px;
-  height: 50px;
-  margin: 0;
-  margin-right: 20px;
-  padding: 10px;
-  padding-left: 13px;
-  border: none;
-  background-color: white;
-  border-style: solid;
-  border-color: white;
-  border-radius: 32px;
-  box-shadow: 0 5px 16px darkgrey;
-}
-main #lower_left {
+  margin-left: 2rem;
   display: flex;
-  flex-wrap: nowrap;
-  width: 75%;
-  margin: 0;
-  margin-top: 70px;
-  padding: 25px;
+  justify-content: center;
+  align-items: center;
+}
+main section#content1 .footer {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  padding-right: 10%;
   justify-content: space-between;
-  background-color: white;
-  gap: 10px;
-}
-main #lower_left div.info {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 33.3333333333%;
-}
-main #lower_left div.info img {
-  height: 60px;
-  width: 60px;
-  margin: 10px;
-  padding: 0;
-}
-main #lower_left div.info h3 {
-  font-size: 28px;
-  color: #264065;
-  margin: 10px;
-  padding: 0;
-  font-weight: 400;
-}
-main #lower_left div.info p {
-  font-size: 20px;
-  text-align: center;
-  margin: 0;
-  padding: 0;
-}
-main .lower_right {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
   justify-self: flex-end;
+  margin-top: 6rem;
+}
+main section#content1 .footer .network {
+  width: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
   margin: 0;
-  margin-left: auto;
-  width: 35%;
-  padding: 0px;
+  margin-right: 2rem;
 }
-main .lower_right article.review {
-  width: 390px;
-  height: 220px;
-  border-radius: 16px;
-  padding: 24px;
-  margin-top: 50px;
-  margin-bottom: 10px;
-  margin-right: 110px;
-  background-color: rgba(255, 255, 255, 0.45);
-  backdrop-filter: blur(8px);
-  font-size: 16px;
-}
-main .lower_right article.review h4 {
+main section#content1 .footer .network p {
   font-size: 18px;
-  margin: 0;
-  padding: 0;
-  margin-top: 13px;
-  color: #264065;
+  font-weight: 600;
+  opacity: 1;
+  width: 50%;
 }
-main .lower_right article.review img {
-  height: 21px;
-  width: 32px;
-  margin: 0;
-  padding: 0;
+main section#content1 .footer .network img {
+  width: 60px;
+  height: 60px;
+  margin-right: 1rem;
 }
-main .lower_right article.review p {
-  margin: 0;
-  padding: 0;
+main section#content2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas: "lila azul amarillo" "lila naranja amarillo" "rosa naranja amarillo";
+  gap: 10px;
+  justify-content: space-between;
+  align-content: space-between;
+  margin: 2rem 0;
+  margin-right: 50px;
+  padding: 20px 0;
+  padding-right: 40px;
 }
-main .lower_right #first {
-  align-self: flex-end;
+main section#content2 > * {
+  min-width: 0;
+}
+main section#content2 img {
+  object-fit: cover;
+  object-position: bottom;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  margin: 0;
+}
+main section#content2 #lila {
+  grid-area: lila;
+  border-radius: 90px;
+}
+main section#content2 #azul {
+  grid-area: azul;
+  border-radius: 90px;
+}
+main section#content2 #amarillo {
+  grid-area: amarillo;
+  border-radius: 90px;
+  height: 70%;
+  align-self: center;
+}
+main section#content2 #rosa {
+  grid-area: rosa;
+  border-radius: 90px;
+}
+main section#content2 #naranja {
+  grid-area: naranja;
+  border-radius: 90px;
 }
 
 /*# sourceMappingURL=styles.css.map */

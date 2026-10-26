@@ -21,11 +21,15 @@ $brand-font: "Poppins", sans-serif;
 
 /// Copy text color
 /// @type Color
-$text-color: rgb(34, 34, 34) !default;
+$text-color: white !default;
+
+/// Second text color
+/// @type Color
+$second-text-color: #FFFFFF;
 
 /// Main brand color
 /// @type Color
-$brand-color: rgb(229, 0, 80) !default;
+$brand-color: #DB2A6B !default;
 
 /// Light grey
 /// @type Color
@@ -41,7 +45,7 @@ $dark-grey: rgb(68, 68, 68) !default;
 
 /// Corporate color
 /// @type Color
-$brand-blue: #264065;
+$brand-blue: blue;
 
 
 
