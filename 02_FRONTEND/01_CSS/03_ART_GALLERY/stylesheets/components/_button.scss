@@ -1,0 +1,127 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the button component.
+// -----------------------------------------------------------------------------
+@use '../abstracts/index';
+
+
+.container button#home {
+    background-color: index.$black;
+    height: fit-content;
+    width: fit-content;
+    margin: 0;
+    padding: 0;
+    border-style: none;
+    display: flex;
+    align-items: center;
+
+    @include index.on-event() {
+        &:hover {
+            background-color: index.$brand-color;
+            img {
+                background-color: index.$black;
+            }
+        }
+    }
+
+    @include index.respond-to('tablet') {
+            height: 5rem;
+        }
+
+    a {
+        
+        font-family: index.$brand-font;
+        font-size: 20px;
+        padding: 0;
+        padding-left: 60px;
+        margin: 0;
+        color: index.$text-color;
+        text-decoration: none;
+
+        @include index.respond-to('tablet') {
+            font-size: 24px;
+            font-weight: 600;
+            letter-spacing: 4px;
+            padding-left: 30px;
+            
+        }
+        
+    }
+
+    img {
+        display: block;
+        margin: 0;
+        padding: 20px;
+        color: index.$text-color;
+        background-color: index.$brand-color;
+        margin-left: auto;
+        align-self: flex-end;
+
+        @include index.respond-to('tablet') {
+            height: 5rem;
+            padding: 25px;
+        }
+        
+    }
+}
+
+button#location {
+    background-color: index.$black;
+    height: fit-content;
+    width: fit-content;
+    margin: 0;
+    padding: 0;
+    border-style: none;
+    display: flex;
+    align-items: center;
+    @include index.on-event() {
+        &:hover {
+            background-color: index.$brand-color;
+            img {
+                background-color: index.$black;
+            }
+        }
+    }
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    @include index.respond-to('tablet'){
+        position: fixed;
+        top: 0;
+        left: 40px;
+    }
+
+    @include index.respond-to('desktop'){
+        position: fixed;
+        top: 0;
+        left: 120px;
+    }
+
+    a {
+        
+        font-family: index.$brand-font;
+        font-size: 20px;
+        padding: 0;
+        padding-right: 60px;
+        margin: 0;
+        color: index.$text-color;
+        text-decoration: none;
+        
+    }
+
+    img {
+        display: block;
+        margin: 0;
+        padding: 20px;
+        color: index.$text-color;
+        background-color: index.$brand-color;
+        margin-left: auto;
+        align-self: flex-end;
+        transform: rotate(180deg);
+    }
+}
+
+
+
+
+

@@ -1,0 +1,262 @@
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the home page.
+// -----------------------------------------------------------------------------
+@charset "UTF-8";
+
+// 1. Vendors
+@use '../vendors/normalize';
+
+//Abstracts
+@use '../abstracts/index';
+
+// 2. Base stuff
+@use '../base/base';
+@use '../base/fonts';
+@use '../base/helpers';
+@use '../base/typography';
+
+// 3. Layout-related sections
+@use '../layout/footer';
+@use '../layout/header';
+
+// 4. Components
+@use '../components/button';
+
+// 6. Themes
+@use '../themes/default';
+
+
+
+.container {
+    min-width: 375px;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    @include index.respond-to('tablet') {
+        min-width: 768px;
+    }
+    @include index.respond-to('desktop') {
+        min-width: 1090px;
+    }
+    
+}
+
+main {
+    margin: 100px 0;
+    padding: 0 10px;
+
+    @include index.respond-to('tablet') {
+        display: grid;
+        width: 100%;
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto auto;
+        gap: 5px 5px;
+        align-content: center;
+        justify-content: center;
+        padding: 0 40px;
+        margin: 100px 0;
+
+    
+
+        img, picture, picture img {
+            min-width: 0;
+            display: block;
+        }
+
+        grid-template-areas: 
+            "text1 img1"
+            "bench img3"
+            "bench text2";
+
+        div#top {
+            grid-area: text1;
+            padding: 40px 0;
+            padding-right: 70px;
+            p {
+                width: 100%;
+            }
+
+            @include index.respond-to('desktop') {
+                width: 300px;
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                gap: 50px;
+                justify-content: center;
+            }
+        }
+
+        #img1 {
+            grid-area: img1;
+            width: 450px;
+            aspect-ratio: 1 /1;
+
+            @include index.respond-to('desktop') {
+                aspect-ratio: auto;
+                width: 600px;
+                height: 400px;
+                justify-self: end;
+            }
+        }
+
+        #img2 {
+            grid-area: bench;
+            margin: 0;
+            padding: 0;
+
+            img {
+                width: 490px;
+                height: 720px;
+                margin: 0;
+                padding: 0;
+
+                @include index.respond-to('desktop') {
+                    width: 725px;
+                    height: 800px;
+                }
+            }
+
+            
+        }
+
+        #img3 {
+            grid-area: img3;
+            margin: 0;
+            padding: 0;
+            justify-self: end;
+
+            @include index.respond-to('desktop') {
+                width: 440px;
+                height: 350px;
+            }
+
+            img {
+                width: 300px;
+                height: 313px;
+                margin: 0;
+                padding: 0;
+
+                @include index.respond-to('desktop') {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+
+        #bottom {
+            grid-area: text2;
+            width: 300px;
+            height: 395px;
+            justify-self: end;
+            align-self: end;
+            align-content: center;
+        }
+
+
+    }
+
+    @include index.respond-to('desktop') {
+        gap: 15px 15px;
+        padding: 50px 125px;
+    }
+
+    img {
+        margin: 5px 0;
+        padding: 0;
+        width: 100%;
+        aspect-ratio: 1 / 1;
+
+        @include index.respond-to('tablet') {
+            width: auto;
+        }
+    }
+
+
+
+    h2 {
+        font-size: 50px;
+        line-height: 45px;
+        font-family: index.$brand-font;
+        font-weight: 900;
+        color: index.$black;
+        margin: 20px 0;
+        padding: 0;
+
+        @include index.respond-to('desktop') {
+            font-size: 56px;
+            line-height: 56px;
+            margin: 0;
+            padding: 0;
+        }
+    }
+
+    p {
+        margin-top: 10px;
+        margin-bottom: 20px;
+        font-size: 19px;
+        font-weight: 200;
+        font-family: index.$secondary-font;
+        line-height: 28px;
+        letter-spacing: 1px;
+
+        @include index.respond-to('desktop') {
+            width: 100%;
+            padding: 0;
+            margin: 0;
+        }
+    }
+
+    picture#img2 img {
+        aspect-ratio: 1 / 1.25;
+    }
+
+    
+        
+    div#bottom {
+        background-color: index.$black;
+        padding: 50px 25px;
+        margin: 0;
+
+        @include index.respond-to('tablet') {
+            padding: 50px 30px;
+            margin: 0;
+        }
+
+        h2 {
+            color: index.$text-color;
+            font-size: 50px;
+            line-height: 45px;
+            margin: 0;
+            padding: 0;
+
+            @include index.respond-to('desktop') {}
+            font-size: 56px;
+            line-height: 50px;
+        }
+
+        p {
+            color: index.$text-color;
+            margin: 0;
+            margin-top: 30px;
+            padding: 0;
+            font-size: 20px;
+            line-height: 28px;
+
+            @include index.respond-to('tablet') {
+                font-size: 18px;
+            }
+        }
+
+        @include index.respond-to('desktop') {
+                width: 440px;
+                height: 435px;
+                padding: 50px 40px;
+                
+        }
+    }
+    
+}
+
+
+

@@ -1,0 +1,68 @@
+@use '../abstracts';
+
+// -----------------------------------------------------------------------------
+// This file contains very basic styles.
+// -----------------------------------------------------------------------------
+
+/**
+ * Set up a decent box model on the root element
+ */
+html {
+  box-sizing: border-box;
+}
+
+/**
+ * Make all elements from the DOM inherit from the parent box-sizing
+ * Since `*` has a specificity of 0, it does not override the `html` value
+ * making all elements inheriting from the root box-sizing value
+ * See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+ */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/**
+ * Basic styles for links
+ */
+/// a {
+///  color: abstracts.$brand-color;
+///  text-decoration: none;
+
+///  @include abstracts.on-event {
+///    color: abstracts.$text-color;
+///    text-decoration: underline;
+/// }
+///}
+
+
+h1 {
+  color: abstracts.$black;
+  font-size: 60px;
+  font-family: abstracts.$brand-font;
+  font-weight: 800;
+  margin: 0;
+  line-height: 55px;
+  padding-right: 45px;
+}
+
+p {
+  color: abstracts.$dark-grey;
+  font-size: 0.85rem;
+  font-family: abstracts.$secondary-font;
+  line-height: 1.5rem;
+  font-weight: 400;
+}
+
+h2 {
+  color: abstracts.$text-color;
+  font-family: abstracts.$brand-font;
+  font-size: 50px;
+}
+
+footer {
+  p {
+    color: abstracts.$text-color;
+  }
+}

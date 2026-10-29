@@ -1,0 +1,163 @@
+@charset "UTF-8";
+
+// 1. Vendors
+@use '../vendors/normalize';
+
+//Abstracts
+@use '../abstracts/index';
+
+// 2. Base stuff
+@use '../base/base';
+@use '../base/fonts';
+@use '../base/helpers';
+@use '../base/typography';
+
+// 3. Layout-related sections
+@use '../layout/footer';
+@use '../layout/header';
+
+// 4. Components
+@use '../components/button';
+
+// 6. Themes
+@use '../themes/default';
+
+body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.loc_container {
+    min-width: 375px;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    border: 0;
+
+    main.location {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        padding: 20px;
+        padding-bottom: 50px;
+        background-color: index.$black;
+
+        div {
+            @include index.respond-to('tablet'){
+                width: 100%;
+                display: grid;
+                grid-template-columns: 40% 60%;
+                grid-template-rows: auto auto auto;
+                grid-template-areas: 
+                    "h2 h3"
+                    "h2 p1"
+                    ". p2";
+                    
+                gap: 20px 20px;
+                justify-items: start;
+                align-items: center;
+                margin: 100px 0;
+                padding: 0 30px;
+    
+            }
+
+            @include index.respond-to('desktop'){
+                gap: 20px 180px;
+                padding: 0 80px;
+            }
+
+        }
+
+        h2 {
+            font-family: index.$brand-font;
+            color: index.$text-color;
+            font-weight: 900;
+            font-size: 50px;
+            line-height: 45px;
+            margin: 50px 0 25px 0;
+
+            @include index.respond-to('tablet'){
+                grid-area: h2;
+                margin: 0;
+                padding: 0;
+                padding-right: 60px;
+                height: auto;
+                font-size: 58px;
+                line-height: 54px;
+            }
+
+            @include index.respond-to('desktop'){
+                padding-right: 200px;
+                padding-left: 50px;
+            }
+        }
+
+        h3 {
+            color: index.$brand-color;
+            font-weight: 900;
+            font-size: 32px;
+            font-family: index.$brand-font;
+            margin: 25px 0 10px 0;
+            text-transform: uppercase;
+
+            @include index.respond-to('tablet'){
+                grid-area: h3;
+                margin: 0;
+                padding: 0;
+                height: auto;
+            }
+        }
+
+        p {
+            color: index.$text-color;
+            margin: 20px 0;
+            padding-right: 20px;
+
+        }
+
+        @include index.respond-to('tablet'){
+            #p1{
+                grid-area: p1;
+                margin: 0;
+                padding: 0;
+                height: auto;
+            }
+
+            #p2 {
+                grid-area: p2;
+                margin: 0;
+                padding: 0;
+                height: auto;
+                width: 90%;
+            }
+        }
+
+        @include index.respond-to('tablet'){
+            #p2 {
+                width: 70%;
+            }
+        }
+    }
+}
+
+iframe {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+footer.loc_footer {
+    background-color: index.$brand-color;
+
+    img {
+        fill: index.$black;
+    }
+
+    p {
+        color: index.$black;
+    }
+}
+

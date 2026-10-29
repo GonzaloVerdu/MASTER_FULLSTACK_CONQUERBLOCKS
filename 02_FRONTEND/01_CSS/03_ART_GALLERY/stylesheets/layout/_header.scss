@@ -1,0 +1,112 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the header of the site/application.
+// -----------------------------------------------------------------------------
+@use '../abstracts/variables';
+@use '../abstracts/mixins';
+
+header {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin: 0;
+    padding: 20px 15px;
+    align-items: center;
+    background-image: url(../img/header-small.jpg);        
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: 100%;
+
+    @include mixins.respond-to('tablet') {
+        height: 850px;
+        background-image: url(../img/header-tablet.jpg);
+        background-repeat: no-repeat;
+        background-size: 60%;
+        background-position: left;
+        justify-content: flex-end;
+        
+        > div {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-self: flex-end;
+            width: 45%;
+        }
+    }
+
+    @include mixins.respond-to('desktop') {
+        background-image: url(../img/header-big.jpg), url(../img/Mask.jpg);
+        background-repeat: no-repeat, no-repeat;
+        background-size: 40% 100%, 35% 100%;
+        background-position: center,left;
+        align-items: flex-start;
+        
+        > div {
+            display: flex;
+            flex-direction: row;
+            margin-top: 200px;
+            width: auto;
+
+            div {
+                display: flex;
+                flex-direction: column;
+                align-self: flex-end;
+                margin-top: 0;
+                margin-right: 130px;
+
+                p {
+                    margin: 0 0 100px 0;
+                    font-size: 22px;
+                    line-height: 35px;
+                    width: 350px;
+                }
+            }
+        }
+    }
+    
+    h1 {
+        margin-top: 275px;
+
+        @include mixins.respond-to('tablet') {
+            margin: 0;
+            font-size: 76px;
+            line-height: 65px;
+        }
+
+        @include mixins.respond-to('desktop') {
+            margin: 0;
+            margin-right: 320px;
+            font-size: 96px;
+            line-height: 88px;
+            color: variables.$text-color;
+        }
+    }
+
+    p {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        font-size: 18px;
+        font-weight: 300;
+        font-family: variables.$secondary-font;
+        line-height: 28px;
+
+        @include mixins.respond-to('tablet') {
+            font-size: 20px;
+            font-weight: 200;
+            line-height: 35px;
+            margin: 60px 0;
+            width: 85%;
+            padding: 0;
+        }
+    }
+
+    button {
+        margin-top: 30px;
+
+        @include mixins.respond-to('tablet') {
+            margin-top: 40px;
+
+        }
+    }
+}
+
